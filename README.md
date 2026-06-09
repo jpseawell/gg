@@ -25,6 +25,7 @@ Starter monorepo template for product work that needs a flagship application, an
 
 ## Recommended Next Steps
 
-1. Flesh out `docs` before product-specific code appears.
-2. Keep shared code in `packages` rather than importing across app boundaries.
-3. Add provider-specific deployment entrypoints only when a real hosting target is chosen.
+1. Work through `docs/templates/project-kickoff.md` after creating a project from this template.
+2. Flesh out `docs` before product-specific code appears.
+3. Keep shared code in `packages` rather than importing across app boundaries.
+4. Add provider-specific deployment entrypoints only when a real hosting target is chosen.
