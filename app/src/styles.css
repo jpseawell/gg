@@ -56,6 +56,26 @@ body {
   font-size: 0.9rem;
 }
 
+.surface-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.surface-nav a {
+  padding: 0.55rem 0.8rem;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #050505;
+}
+
+.surface-nav a:hover {
+  background: #f2f2f2;
+  color: #050505;
+}
+
 .eyebrow {
   margin: 0 0 0.75rem;
   text-transform: uppercase;

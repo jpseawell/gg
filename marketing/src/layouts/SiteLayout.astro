@@ -1,12 +1,22 @@
 ---
+import { marketingConfig } from "../config";
 import "../styles/global.css";
 
 interface Props {
   title: string;
   description: string;
+  canonicalPath?: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, canonicalPath, image } = Astro.props;
+const canonicalUrl = new URL(
+  canonicalPath ?? Astro.url.pathname,
+  marketingConfig.marketingUrl,
+).toString();
+const socialImageUrl = image
+  ? new URL(image, marketingConfig.marketingUrl).toString()
+  : undefined;
 ---
 
 <!doctype html>
@@ -16,8 +26,51 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {socialImageUrl && <meta property="og:image" content={socialImageUrl} />}
+    <meta
+      name="twitter:card"
+      content={socialImageUrl ? "summary_large_image" : "summary"}
+    />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body>
     <slot />
+    <script>
+      import {
+        initMarketingAnalytics,
+        trackMarketingEvent,
+        trackMarketingPageView,
+      } from "../lib/analytics";
+
+      initMarketingAnalytics();
+      trackMarketingPageView();
+
+      document.addEventListener("click", (event) => {
+        const target =
+          event.target instanceof Element
+            ? event.target.closest<HTMLElement>("[data-analytics-event]")
+            : null;
+
+        if (!target) {
+          return;
+        }
+
+        trackMarketingEvent(
+          target.dataset.analyticsEvent ?? "Marketing Element Clicked",
+          {
+            href: target.getAttribute("href"),
+            path: window.location.pathname,
+            text: target.textContent?.trim().slice(0, 80),
+          },
+        );
+      });
+    </script>
   </body>
 </html>

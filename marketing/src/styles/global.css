@@ -26,6 +26,25 @@ body {
   padding: 5rem 0;
 }
 
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+}
+
+.top-nav a,
+.hero-actions a {
+  border-radius: 8px;
+}
+
+.top-nav a {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(26, 38, 49, 0.14);
+  color: #1a2631;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.62);
+}
+
 .hero {
   max-width: 760px;
   margin-bottom: 3rem;
@@ -55,6 +74,27 @@ h1 {
   max-width: 60ch;
   font-size: 1.12rem;
   color: #394755;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-actions a {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(26, 38, 49, 0.14);
+  color: #1a2631;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.hero-actions .primary-link {
+  border-color: #1a2631;
+  background: #1a2631;
+  color: #fffaf2;
 }
 
 .pillars {
