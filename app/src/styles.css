@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background:
+    radial-gradient(circle at top, rgba(214, 132, 61, 0.18), transparent 38%),
+    linear-gradient(180deg, #f6efe4 0%, #f4f1eb 100%);
+  color: #182027;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+}
+
+.hero {
+  padding: 2rem 0 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: #91552d;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  line-height: 0.95;
+}
+
+.intro {
+  max-width: 62ch;
+  font-size: 1.1rem;
+  color: #39434b;
+}
+
+.content {
+  display: grid;
+  gap: 2rem;
+}
+
+.section-heading {
+  margin-bottom: 1.25rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.docs-panel {
+  border: 1px solid rgba(24, 32, 39, 0.09);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 50px rgba(24, 32, 39, 0.08);
+}
+
+.card {
+  padding: 1.4rem;
+}
+
+.card-name,
+code {
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+
+.card-name {
+  margin-bottom: 0.65rem;
+  color: #91552d;
+}
+
+code {
+  display: inline-block;
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: #f0dfc8;
+}
+
+.docs-panel {
+  padding: 1.6rem;
+}
+
+.docs-panel ul {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+  color: #39434b;
+}
+
+.docs-panel li + li {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100%, calc(100% - 1.25rem));
+    padding-top: 2.25rem;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}

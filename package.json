@@ -1,0 +1,21 @@
+{
+  "name": "gg",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20.20.0"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel --stream --filter @gg/app --filter @gg/api --filter @gg/marketing dev",
+    "dev:app": "pnpm --filter @gg/app dev",
+    "dev:api": "pnpm --filter @gg/api dev",
+    "dev:marketing": "pnpm --filter @gg/marketing dev",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

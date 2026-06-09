@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  background:
+    linear-gradient(180deg, #efe3d4 0%, #fbf8f2 56%),
+    radial-gradient(
+      circle at top right,
+      rgba(23, 55, 78, 0.08),
+      transparent 30%
+    );
+  color: #1a2631;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.hero {
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: #8d5a31;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(3.2rem, 8vw, 5.8rem);
+  line-height: 0.94;
+}
+
+.lede {
+  max-width: 60ch;
+  font-size: 1.12rem;
+  color: #394755;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.pillar {
+  padding: 1.5rem;
+  border-radius: 26px;
+  border: 1px solid rgba(26, 38, 49, 0.1);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 16px 46px rgba(26, 38, 49, 0.08);
+}
+
+.pillar p {
+  color: #394755;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100%, calc(100% - 1.25rem));
+    padding: 3rem 0;
+  }
+}
