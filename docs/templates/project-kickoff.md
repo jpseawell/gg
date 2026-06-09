@@ -4,6 +4,7 @@ Use this checklist after creating a repository from the template and before feat
 
 ## Identity
 
+- Run `pnpm rename:template -- --name my-project --scope @myorg --title "My Project"` or make the same changes manually.
 - Rename the root package in `package.json`.
 - Rename workspace package scopes if `@gg/*` should not remain the package namespace.
 - Update app and marketing page titles, descriptions, and visible starter copy.
@@ -29,3 +30,5 @@ Use this checklist after creating a repository from the template and before feat
 - Run `pnpm typecheck`.
 - Run `pnpm test`.
 - Run `pnpm build`.
+- Run `pnpm smoke:install`.
+- Run `pnpm smoke`.
