@@ -26,18 +26,21 @@ const pillars = [
       <p class="eyebrow">gg starter</p>
       <h1>Ship product, content, and infrastructure from one clean repo.</h1>
       <p class="lede">
-        This starter is designed for teams that need a flagship application, a service layer, and a
-        marketing site without collapsing everything into a single framework.
+        This starter is designed for teams that need a flagship application, a
+        service layer, and a marketing site without collapsing everything into a
+        single framework.
       </p>
     </section>
 
     <section class="pillars">
-      {pillars.map((pillar) => (
-        <article class="pillar">
-          <h2>{pillar.title}</h2>
-          <p>{pillar.body}</p>
-        </article>
-      ))}
+      {
+        pillars.map((pillar) => (
+          <article class="pillar">
+            <h2>{pillar.title}</h2>
+            <p>{pillar.body}</p>
+          </article>
+        ))
+      }
     </section>
   </main>
 </SiteLayout>

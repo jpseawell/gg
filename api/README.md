@@ -9,6 +9,11 @@ The `api` workspace starts as a small Fastify service with a health route and a 
 - `pnpm --filter @gg/api typecheck`
 - `pnpm --filter @gg/api test`
 
+## Runtime Configuration
+
+- `HOST` - bind host for the HTTP server. Defaults to `0.0.0.0`.
+- `PORT` - bind port for the HTTP server. Defaults to `3001`.
+
 ## Conventions
 
 - Keep integration boundaries explicit.
