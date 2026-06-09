@@ -20,8 +20,12 @@ Starter monorepo template for product work that needs a flagship application, an
 - `pnpm install` - install all workspace dependencies.
 - `pnpm dev` - run the app, api, and marketing surfaces in parallel.
 - `pnpm build` - build every workspace that exposes a build script.
+- `pnpm clean` - remove generated build, coverage, and browser-test artifacts.
 - `pnpm typecheck` - run TypeScript checks across the workspace.
 - `pnpm test` - run available tests across the workspace.
+- `pnpm smoke:install` - install the Chromium browser bundle used by smoke tests.
+- `pnpm smoke` - build and run browser smoke tests against the app and marketing previews.
+- `pnpm rename:template -- --name my-project --scope @myorg --title "My Project"` - update starter identity after creating a project from the template.
 
 ## Recommended Next Steps
 

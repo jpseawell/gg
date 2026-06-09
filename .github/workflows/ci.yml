@@ -39,3 +39,9 @@ jobs:
 
       - name: Build workspace
         run: pnpm build
+
+      - name: Install Playwright Chromium
+        run: pnpm smoke:install
+
+      - name: Smoke test frontends
+        run: pnpm smoke:test
