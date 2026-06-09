@@ -1,4 +1,6 @@
 import type { SurfaceCard } from "@gg/types";
+import { surfaceLinks } from "./config";
+import { trackAppEvent } from "./lib/analytics";
 
 const surfaces: SurfaceCard[] = [
   {
@@ -35,9 +37,20 @@ const documentationAreas = [
 ] as const;
 
 export default function App() {
+  function trackMarketingClick() {
+    trackAppEvent("Marketing Link Clicked", {
+      destination: surfaceLinks.marketing.home,
+    });
+  }
+
   return (
     <div className="shell">
       <header className="hero">
+        <nav className="surface-nav" aria-label="Workspace surfaces">
+          <a href={surfaceLinks.marketing.home} onClick={trackMarketingClick}>
+            Marketing
+          </a>
+        </nav>
         <p className="eyebrow">gg starter</p>
         <h1>Start the repo with clear product boundaries.</h1>
         <p className="intro">

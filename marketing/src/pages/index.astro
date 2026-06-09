@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import { surfaceLinks } from "../config";
 
 const pillars = [
   {
@@ -22,6 +23,15 @@ const pillars = [
   description="SEO-friendly starter surface for the gg monorepo template."
 >
   <main class="page-shell">
+    <nav class="top-nav" aria-label="Workspace surfaces">
+      <a
+        href={surfaceLinks.app.home}
+        data-analytics-event="Marketing App Nav Clicked"
+      >
+        Open app
+      </a>
+    </nav>
+
     <section class="hero">
       <p class="eyebrow">gg starter</p>
       <h1>Ship product, content, and infrastructure from one clean repo.</h1>
@@ -30,9 +40,24 @@ const pillars = [
         service layer, and a marketing site without collapsing everything into a
         single framework.
       </p>
+      <div class="hero-actions">
+        <a
+          class="primary-link"
+          href={surfaceLinks.app.home}
+          data-analytics-event="Marketing App CTA Clicked"
+        >
+          Open app
+        </a>
+        <a
+          href="#surfaces"
+          data-analytics-event="Marketing Surfaces Anchor Clicked"
+        >
+          Explore surfaces
+        </a>
+      </div>
     </section>
 
-    <section class="pillars">
+    <section class="pillars" id="surfaces">
       {
         pillars.map((pillar) => (
           <article class="pillar">

@@ -15,6 +15,12 @@ Starter monorepo template for product work that needs a flagship application, an
 - `packages` - shared types, config, utilities, and reusable modules.
 - `tooling` - shared automation, deployment helpers, and local infrastructure scripts.
 
+## Shared Surface Contracts
+
+- `@gg/config` owns cross-surface links so the app and marketing site agree on canonical URLs.
+- `@gg/analytics` owns analytics provider calls. Mixpanel is the default adapter, but app and marketing code call local wrapper functions instead of importing Mixpanel directly.
+- Marketing owns SEO-first output: canonical metadata, social metadata, `robots.txt`, and sitemap generation.
+
 ## Workspace Commands
 
 - `pnpm install` - install all workspace dependencies.
@@ -32,4 +38,5 @@ Starter monorepo template for product work that needs a flagship application, an
 1. Work through `docs/templates/project-kickoff.md` after creating a project from this template.
 2. Flesh out `docs` before product-specific code appears.
 3. Keep shared code in `packages` rather than importing across app boundaries.
-4. Add provider-specific deployment entrypoints only when a real hosting target is chosen.
+4. Set app and marketing URLs in both `.env` files before wiring launch links or analytics funnels.
+5. Add provider-specific deployment entrypoints only when a real hosting target is chosen.

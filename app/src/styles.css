@@ -37,6 +37,24 @@ body {
   padding: 2rem 0 3rem;
 }
 
+.surface-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+}
+
+.surface-nav a {
+  border-radius: 8px;
+}
+
+.surface-nav a {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(24, 32, 39, 0.14);
+  color: #182027;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.62);
+}
+
 .eyebrow {
   margin: 0 0 0.75rem;
   text-transform: uppercase;
@@ -107,7 +125,7 @@ code {
   display: inline-block;
   margin-top: 0.85rem;
   padding: 0.45rem 0.7rem;
-  border-radius: 999px;
+  border-radius: 8px;
   background: #f0dfc8;
 }
 

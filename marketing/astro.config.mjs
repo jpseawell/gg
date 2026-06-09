@@ -1,7 +1,10 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   output: "static",
+  site: process.env.PUBLIC_MARKETING_URL ?? "http://localhost:4321",
+  integrations: [sitemap()],
   server: {
     port: 4321,
   },
